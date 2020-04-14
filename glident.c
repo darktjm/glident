@@ -22,6 +22,14 @@
  *     or in the same subdirectory you're using in the above step
  *   - set LD_LIBRARY_PATH to that directory when running wine:
  *     LD_LIBRARY_PATH=$PWD/glident wine <game>.exe
+ *
+ * For Linux natie binaries, it should work by just using LD_PRELOAD:
+ *     LD_PRELOAD=<path_to>/glident.so <game>
+ *
+ * To actually override VENDOR, RENDERER, and/or VERSION, set the GL_FAKE_x
+ * environment variable.  For example:
+ *    GL_FAKE_RENDERER="HD Graphics" GL_VAKE_VENDOR=AMD \
+ *    LD_LIBRARY+PATH=$PWD/glident wine <game>.exe
  */
 
 /* for RTLD_NEXT and glibc's memmem */
